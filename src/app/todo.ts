@@ -7,8 +7,3 @@ export class Todo {
     Object.assign(this, values);
   }
 }
-
-let todo = new Todo({
-    title: 'test toto',
-    complete: false
-});
