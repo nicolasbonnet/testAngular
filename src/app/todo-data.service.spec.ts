@@ -2,18 +2,6 @@ import { TestBed, inject } from '@angular/core/testing';
 import {Todo} from './todo';
 import { TodoDataService } from './todo-data.service';
 
-// describe('TodoDataService', () => {
-//   beforeEach(() => {
-//     TestBed.configureTestingModule({
-//       providers: [TodoDataService]
-//     });
-//   });
-//
-//   it('should be created', inject([TodoDataService], (service: TodoDataService) => {
-//     expect(service).toBeTruthy();
-//   }));
-// });
-
 describe('TodoDataService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
@@ -48,8 +36,10 @@ describe('TodoDataService', () => {
       let todo2 = new Todo({title: 'Hello 2', complete: true});
       service.addTodo(todo1);
       service.addTodo(todo2);
-      expect(service.getTodoById(1)).toEqual(todo1);
-      expect(service.getTodoById(2)).toEqual(todo2);
+      let test1 = service.getTodoById(1);
+      let test2 = service.getTodoById(2);
+      expect(test1).toEqual(todo1);
+      expect(test2).toEqual(todo2);
     }));
 
   });
