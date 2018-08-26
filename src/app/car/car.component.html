@@ -1,0 +1,23 @@
+<p>
+  car works!
+</p>
+
+<h2>Add a car</h2>
+
+<form class="form">
+  <input type="text" class="form-control" placeholder="name of car" [(ngModel)]="currentCar.name" name="carName" />
+  <input type="text" class="form-control" placeholder="description of car" [(ngModel)]="currentCar.description" name="carDescription" />
+  <input type="number" class="form-control" placeholder="nb portes of car" [(ngModel)]="currentCar.nbPort" name="carNbPort" />
+
+  <input type="submit" value="add car !" name="addCar" class="btn btn-primary" (submit)="addCar()" (click)="addCar()" />
+</form>
+
+
+<h3 *ngIf="cars.length > 0">list of cars</h3>
+<ul *ngIf="cars.length > 0">
+  <li *ngFor="let car of cars">
+    name: {{car.name}} <br /> description: {{car.description}} <br> nb portes : {{car.nbPort}}
+  </li>
+</ul>
+
+<h3 *ngIf="cars.length == 0">empty carss ... </h3>
